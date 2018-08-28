@@ -17,6 +17,7 @@ ansiColor('xterm') {
           try {
             docker.image('node:9-alpine').inside("-u 0") {
               sh '''
+                apk add -U --no-cache make
                 yarn
                 make build
                 echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories
