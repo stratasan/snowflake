@@ -32,7 +32,7 @@ ansiColor('xterm') {
             throw err
           } finally {
             node('master') {
-              logstashSend failBuild: false, maxLines: 1000
+              logstashSend failBuild: false
             }
           }
         }
